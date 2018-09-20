@@ -1,7 +1,11 @@
 ---
-title: "Test-用deconstructSigs做cosmic的mutation signature图"
-author: wanshq,763091820@qq.com
-date: 2018年5月14日
+title: Test-用deconstructSigs做cosmic的mutation signature图
+author: wanshq
+date: '2018-09-20'
+categories:
+  - R
+tags:
+  - R Markdown
 output: html_document
 ---
 作者的[英文文档](https://github.com/raerose01/deconstructSigs) 对这个包的用法描述的非常清楚， 只是记录一下自己学习该包用法的一点感悟
