@@ -2,9 +2,11 @@
 title: Test-using deconstructSigs to get mutation signature figure
 author: wanshq
 date: '2018-09-19'
+categories:
+  - R
+tags:
+  - R Markdown
 slug: test-using-deconstructsigs-to-get-mutation-signature-figure
-categories: []
-tags: []
 ---
 
 作者的[英文文档](https://github.com/raerose01/deconstructSigs) 对这个包的用法描述的非常清楚， 只是记录一下自己学习该包用法的一点感悟
