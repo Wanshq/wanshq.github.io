@@ -1,19 +1,16 @@
 ---
-title: mutation signature of cosmic
-author: wanshq
-date: '2018-09-19'
-slug: mutation-signature-of-cosmic
-categories:
-  - R
-tags:
-  - R Markdown
+title: "Test-用deconstructSigs做cosmic的mutation signature图"
+author: wanshq,763091820@qq.com
+date: 2018年5月14日
+output: html_document
 ---
-作者的[英文文档](https://github.com/raerose01/deconstructSigs) 对这个包的用法描述的非常清楚， 我只是记录一下自己学习该包用法的一点感悟
+作者的[英文文档](https://github.com/raerose01/deconstructSigs) 对这个包的用法描述的非常清楚， 只是记录一下自己学习该包用法的一点感悟
 
 *工作的原因
 首先是赚钱解决温饱
 其次在温饱的基础上，获得成就感，尊严和社会地位
-最高级别是把工作做到极致变成技艺，上升至艺术，成为信仰，甚至宗教。*
+最高级别是把工作做到极致变成技艺，上升至艺术，成为信仰，甚至宗教。
+*
 **这是我见过我觉得最诗意，最准确的回答。**
 
 0. 安装并加载必须的packages
