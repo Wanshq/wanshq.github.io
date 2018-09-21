@@ -49,8 +49,8 @@ blogdown::install_hugo()</p>
 install.packages(“devtools”)<br />
 devtools::install_github(“rstudio/blogdown”)</p>
 <p>iii.如果以上两种报错，把错误信息中的链接复制到浏览器直接下载，<br />
-把文件解压得到<a href="https://yihui.name/en/2017/12/blogdown-book/">一个hugo文件</a>，把解压好的 hugo.exe文件放在d:/根目录下，然后输入下面代码安装 hugo：<br />
-# 注意这里是三个冒号<br />
+把文件解压得到<a href="https://yihui.name/en/2017/12/blogdown-book/">一个hugo文件</a>，把解压好的 hugo.exe文件放在d:/根目录下，然后输入下面代码安装 hugo：</p>
+<p># 注意这里是三个冒号<br />
 blogdown:::install_hugo_bin(“d:/hugo.exe”)</p>
 </div>
 <div id="git-repository" class="section level2">
@@ -100,10 +100,10 @@ public<br />
 static/figures<br />
 blogdown</p>
 <p>如果对 git 命令不是很熟悉，建议在这个时候就把.gitignore文件修改好的，因为在生成 public 文件夹之后 (后面的步骤会生成 public)，再修改.gitignore文件添加public文件夹，那么Git标签那里还是不会把 public 文件夹忽略掉，要解决这个问题，可以按如下操作：</p>
-<p>git rm -r –cached public<br />
-# 然后在.gitignore文件添加规则</p>
-<p>public<br />
-这样下次的 git add . 就不会把 public 加进去了。</p>
+<pre><code>git rm -r --cached public\</code></pre>
+<p># 然后在.gitignore文件添加规则</p>
+<pre><code>public\</code></pre>
+<p>这样下次的 git add . 就不会把 public 加进去了。</p>
 </div>
 <div class="section level2">
 <h2><strong>3.工作流程</strong></h2>
@@ -127,8 +127,8 @@ git pull origin master –allow-unrelated-histories<br />
 git push -u origin master<br />
 </p>
 <p>以上，为整个操作流程。</p>
-<p>参考文献：</p>
-<p>1.<a href="https://bookdown.org/yihui/blogdown/">blogdown: Create Blogs and Websites with R Markdown</a><br />
+<p>参考文献：<br />
+1.<a href="https://bookdown.org/yihui/blogdown/">blogdown: Create Blogs and Websites with R Markdown</a><br />
 2.<a href="https://github.com/rstudio/blogdown">blogdown</a><br />
 3.<a href="https://cosx.org/2018/01/build-blog-with-blogdown-hugo-netlify-github/">用 R 语言的 blogdown+hugo+netlify+github 4.建博客</a><br />
 5.<a href="http://dapengde.com/archives/17033">九分钟学会 Markdown</a><br />
