@@ -14,7 +14,8 @@ slug: 记录-用-r-blogdown-github-netlify-建一个静态网站
 通过github + R语言的blogdown， + netlify网站发布=静态博客系统\
 就可以用 rstudio 专注于写作\
 
-#**第一步：安装软件**
+
+# **第一步：安装软件**
 
 软件准备，以Windows系统为例
 
@@ -22,7 +23,7 @@ slug: 记录-用-r-blogdown-github-netlify-建一个静态网站
 2. 安装 R，[点此下载](https://www.r-project.org)\
 3. 安装 rstudio，[点此下载](https://www.rstudio.com/products/rstudio/download/#download)\
 
-#**第二步：配置软件**
+# **第二步：配置软件**
 
 ##**1. rstudio 配置**
 
@@ -92,7 +93,7 @@ blogdown:::install_hugo_bin("d:/hugo.exe")
 
 点击左边导航栏的Domain management -> Domains，然后点击Add custom\ domain，这个时候就可以输入你在域名提供商处注册的域名了。
 
-#**第三步：建站 **
+# **第三步：建站 **
 
 ##**1. 构建本地项目仓库**
 
@@ -157,11 +158,11 @@ git push -u origin master\
 
 参考文献：
 
-[blogdown: Create Blogs and Websites with R Markdown](https://bookdown.org/yihui/blogdown/)
-[blogdown](https://github.com/rstudio/blogdown)
-[用 R 语言的 blogdown+hugo+netlify+github 建博客](https://cosx.org/2018/01/build-blog-with-blogdown-hugo-netlify-github/)
-[九分钟学会 Markdown](http://dapengde.com/archives/17033)
-[用 blogdown 搭建一个静态网站](https://slides.yihui.name/2017-blogdown-CGM-Yihui-Xie.html#1)
-[GIT 子模块](https://yihui.name/cn/2017/03/git-submodule/)
-[本站是如何建成的：R blogdown 简介](http://xuer.dapengde.com/post/hugo-blogdown/)
+1.[blogdown: Create Blogs and Websites with R Markdown](https://bookdown.org/yihui/blogdown/)\
+2.[blogdown](https://github.com/rstudio/blogdown)\
+3.[用 R 语言的 blogdown+hugo+netlify+github 4.建博客](https://cosx.org/2018/01/build-blog-with-blogdown-hugo-netlify-github/)\
+5.[九分钟学会 Markdown](http://dapengde.com/archives/17033)\
+6.[用 blogdown 搭建一个静态网站](https://slides.yihui.name/2017-blogdown-CGM-Yihui-Xie.html#1)\
+7.[GIT 子模块](https://yihui.name/cn/2017/03/git-submodule/)\
+8.[本站是如何建成的：R blogdown 简介](http://xuer.dapengde.com/post/hugo-blogdown/)\
 
