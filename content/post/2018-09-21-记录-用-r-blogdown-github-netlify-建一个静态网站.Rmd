@@ -1,5 +1,5 @@
 ---
-title: 记录：用 R(blogdown)+github+netlify 建一个静态网站
+title: 用 R(blogdown)+github+netlify 建一个静态网站
 author: wanshq
 date: '2018-09-21'
 slug: 记录-用-r-blogdown-github-netlify-建一个静态网站
@@ -44,7 +44,7 @@ Tools -> Global Options -> Git/SVN -> Git executable:
 
 Tools -> Global Options -> Packages -> CRAN mirror:
 
-*建议选择一个距离你比较近的镜像，速度会快点。例如，国内用户可以选择一个 China 的镜像。*
+*建议选择一个距离你比较近的镜像，速度会快点。例如，国内用户可以选择一个 China 的镜像*
 
 **2. rstudio 界面安装blogdown 和 hugo**
 
