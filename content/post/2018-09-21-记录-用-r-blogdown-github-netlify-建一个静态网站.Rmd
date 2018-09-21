@@ -12,7 +12,8 @@ slug: 记录-用-r-blogdown-github-netlify-建一个静态网站
 **目的：**
 记录\
 通过github + R语言的blogdown， + netlify网站发布=静态博客系统\
-就可以用 rstudio 专注于写作\
+就可以用 rstudio 专注于写作
+
 
 
 # **第一步：安装软件**
@@ -99,7 +100,7 @@ blogdown:::install_hugo_bin("d:/hugo.exe")
 
 回到 rstudio，File -> New Project -> Version Control -> Git，
 
-填写 Repository URL:https://github.com/yourGithubName/自定义仓库名，\
+填写 Repository URL:https://github.com/yourGithubName/自定义仓库名 \
 Project directory name应该自动就生成了，
 
 选择一个合适的文件夹存放，**点击 Create Project **创建项目
