@@ -1,0 +1,207 @@
+---
+title: 记录：用 R(blogdown)+github+netlify 建一个静态网站
+author: wanshq
+date: '2018-09-21'
+slug: 记录-用-r-blogdown-github-netlify-建一个静态网站
+categories:
+  - R
+tags:
+  - R Markdown
+---
+
+**目的：**
+通过github + R语言的blogdown， + netlify网站发布=静态博客系统
+就可以用 rstudio 专注于写作
+
+
+
+**第一步：安装软件**
+
+软件准备，以Windows系统为例
+
+1. 安装 git，[点此下载](https://git-scm.com/download/win) 
+
+2. 安装 R，[点此下载](https://www.r-project.org)
+
+3. 安装 rstudio，[点此下载](https://www.rstudio.com/products/rstudio/download/#download)
+
+
+**第二步：配置软件**
+
+**1. rstudio 配置**
+
+Tools -> Global Options -> Sweave -> Weave Rnw files using:knitr
+
+Tools -> Global Options -> Sweave -> Typeset LaTex into PDF using:XeLaTeX
+
+*这个是生成 PDF 文件用的，中文用户最好选择 XeLaTeX *
+
+
+Tools -> Global Options -> Git/SVN -> Git executable:
+
+*安装好 git 后，打开这里应该就可以看到 git 的路径了*
+
+
+Tools -> Global Options -> Packages -> CRAN mirror:
+
+*建议选择一个距离你比较近的镜像，速度会快点。例如，国内用户可以选择一个 China 的镜像。*
+
+**2. rstudio 界面安装blogdown 和 hugo**
+
+安装 blogdown：
+
+```{r}
+install.packages('blogdown')
+```
+
+安装 hugo，可以依次按照下列方法安装
+
+i.直接安装
+
+```{r}
+blogdown::install_hugo()
+```
+
+ii.开发版安装
+
+```{r}
+install.packages("devtools")
+devtools::install_github("rstudio/blogdown")
+```
+
+iii.如果以上两种报错，把错误信息中的链接复制到浏览器直接下载，把文件解压得到[一个hugo文件](https://yihui.name/en/2017/12/blogdown-book/)，把解压好的 hugo.exe文件放在d:/根目录下，然后输入下面代码安装 hugo：
+
+```{r}
+# 注意这里是三个冒号
+blogdown:::install_hugo_bin("d:/hugo.exe")
+```
+
+**3. 注册git账号，并创建 repository**
+
+首先，在[github网站](https://github.com/)根据页面提示注册一个账号。
+
+其次，创建repository，填写信息
+
+ 。repository name ： 自定义
+
+ 。Description ： blog
+
+ 。默认选择 Public
+
+ 。可选复选框 Initialize this repository with a README
+
+ 。add .gitignore选择R
+
+最后Create repository 就可以创建好一个用于保存网站repository。
+
+**4. 注册 netlify**
+
+打开 [netlify 主页](https://app.netlify.com/signup)就可以注册了，直接在 Sign up with one of the following: 下面选择 GitHub 就行了。
+
+绑定 github
+
+登录进 netlify 后，点击导航栏Sites，再点击右上角New site from Git，再点击Github
+
+进入后填写Build Command-->hugo, Publish directory-->public, 因为 hugo 生成的文件夹是public所以填 public。
+
+点击**deploy site**就可以生成网站了。
+
+再去到一个叫**deploy settings**的地方，确保选项选中的是none，就是只 deploy master 分支。
+
+**可以绑定，设置个性二级域名**
+
+这个时候生成的网站网址是<一串类似md5的字符串>.netlify.com，点击导航栏的Overview，再点击Site settings -> Change site name，就可以输入你的英文名字，这时就得到一个 netlify 的二级域名<Site Name>.netlify.com。
+
+绑定个人域名
+如果你不满足于 netlify 的二级域名，还可以选择绑定个人域名。
+
+点击左边导航栏的Domain management -> Domains，然后点击Add custom domain，这个时候就可以输入你在域名提供商处注册的域名了。
+
+**第三步：建站 **
+
+**1. 构建本地项目仓库**
+
+回到 rstudio，File -> New Project -> Version Control -> Git，
+
+填写 Repository URL:https://github.com/yourGithubName/自定义仓库名，
+Project directory name应该自动就生成了，
+
+选择一个合适的文件夹存放，**点击 Create Project **创建项目
+
+
+**2.设置 gitignore**
+
+打开 rstudio 右下角的Files标签，点击.gitignore文件，改成下面这样（copy Yihui 的）：
+目录就不会提交到 github 上
+
+```{r}
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+public
+static/figures
+blogdown
+```
+
+如果对 git 命令不是很熟悉，建议在这个时候就把.gitignore文件修改好的，因为在生成 public 文件夹之后 (后面的步骤会生成 public)，再修改.gitignore文件添加public文件夹，那么Git标签那里还是不会把 public 文件夹忽略掉，要解决这个问题，可以按如下操作：
+
+git rm -r --cached public
+
+# 然后在.gitignore文件添加规则
+
+public
+
+这样下次的 git add . 就不会把 public 加进去了。
+
+**3.工作流程**
+
+可从菜单用向导创建一个新网站
+
+RStudio 插件->"Serve Site"（建议先设置 options(servr.daemon = TRUE) 选项）->"New Post"
+
+已有文件->改名"Update Metadata"
+
+打开 RStudio 之后点 "Serve Site" 插件（每次打开 RStudio 只需要点一次，它会一直在后台运行）
+
+更新旧页面，或者创建新页面（"New Post" 插件）
+
+猛写内容，保存（网站会自动编译并刷新）
+
+推送到 Github（推荐方式）或者将 public/ 文件夹传到 Netlify
+
+**push 文章**
+写好的文章 update 到线上，点击右上角Git标签，点击commit（如下图所示），填写好 commit message 点击commit -> push，这样就已经更新线上的博客，打开你的个人主页<Site Name>.netlify.com就可以看到最新的文章
+
+**推送到 Github（推荐方式）如下**
+
+**打开Git Bash**
+
+cd <本地项目目录>
+
+git init
+
+git add .
+
+git commit -m "first comment"
+
+git remote add origin https://github.com/<github帐号>/<仓库名称>
+
+git remote -v
+
+git pull origin master --allow-unrelated-histories
+
+git push -u origin master
+
+
+以上，为整个操作流程。
+
+参考文献：
+[blogdown: Create Blogs and Websites with R Markdown](https://bookdown.org/yihui/blogdown/)
+[blogdown](https://github.com/rstudio/blogdown)
+[用 R 语言的 blogdown+hugo+netlify+github 建博客](https://cosx.org/2018/01/build-blog-with-blogdown-hugo-netlify-github/)
+[九分钟学会 Markdown](http://dapengde.com/archives/17033)
+[用 blogdown 搭建一个静态网站](https://slides.yihui.name/2017-blogdown-CGM-Yihui-Xie.html#1)
+[GIT 子模块](https://yihui.name/cn/2017/03/git-submodule/)
+[本站是如何建成的：R blogdown 简介](http://xuer.dapengde.com/post/hugo-blogdown/)
+
