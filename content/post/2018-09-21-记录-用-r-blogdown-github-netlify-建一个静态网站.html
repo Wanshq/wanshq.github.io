@@ -92,6 +92,7 @@ Project directory name应该自动就生成了，</p>
 <h2><strong>2.设置 gitignore</strong></h2>
 <p>打开 rstudio 右下角的Files标签，点击.gitignore文件，改成下面这样（copy Yihui 的）：<br />
 目录就不会提交到 github 上</p>
+<blockquote>
 <p>.Rproj.user<br />
 .Rhistory<br />
 .RData<br />
@@ -99,6 +100,7 @@ Project directory name应该自动就生成了，</p>
 public<br />
 static/figures<br />
 blogdown</p>
+</blockquote>
 <p>如果对 git 命令不是很熟悉，建议在这个时候就把.gitignore文件修改好的，因为在生成 public 文件夹之后 (后面的步骤会生成 public)，再修改.gitignore文件添加public文件夹，那么Git标签那里还是不会把 public 文件夹忽略掉，要解决这个问题，可以按如下操作：</p>
 <pre><code>git rm -r --cached public\</code></pre>
 <p># 然后在.gitignore文件添加规则</p>
@@ -116,7 +118,8 @@ blogdown</p>
 <p>推送到 Github（推荐方式）或者将 public/ 文件夹传到 Netlify</p>
 <p><strong>push 文章</strong> 写好的文章 update 到线上，点击右上角Git标签，点击commit（如下图所示），填写好 commit message 点击commit -&gt; push，这样就已经更新线上的博客，打开你的个人主页<Site Name>.netlify.com就可以看到最新的文章</p>
 <p><strong>推送到 Github（推荐方式）如下</strong></p>
-<p>打开Git Bash<br />
+<p>打开Git Bash</p>
+<blockquote>
 cd <本地项目目录><br />
 git init<br />
 git add .<br />
@@ -125,7 +128,8 @@ git remote add origin <a href="https://github.com/" class="uri">https://github.c
 git remote -v<br />
 git pull origin master –allow-unrelated-histories<br />
 git push -u origin master<br />
-</p>
+
+</blockquote>
 <p>以上，为整个操作流程。</p>
 <p>参考文献：<br />
 1.<a href="https://bookdown.org/yihui/blogdown/">blogdown: Create Blogs and Websites with R Markdown</a><br />

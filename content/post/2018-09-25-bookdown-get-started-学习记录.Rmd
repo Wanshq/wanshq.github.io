@@ -1,0 +1,67 @@
+---
+title: Bookdown-get started 学习记录
+author: wanshq
+date: '2018-09-25'
+slug: bookdown-get-started-学习记录
+categories:
+  - R
+tags:
+  - R Markdown
+---
+
+**目的：**
+记录\
+通过R语言的bookdown to get a book\
+maybe 也可以写本书
+
+**简介**
+R bookdown 是一个R包，用来写书写文章的R包。\
+可以生成漂亮的pdf、word和网页文件。\
+可重复性撰写报告。
+
+# **第一步：安装软件**
+
+软件准备，以Windows系统为例
+
+1. 安装 git，[点此下载](https://git-scm.com/download/win) \
+2. 安装 R，[点此下载](https://www.r-project.org)\
+3. 安装 rstudio，[点此下载](https://www.rstudio.com/products/rstudio/download/#download)\
+
+# **第二步：配置R包**
+
+##**1. rstudio 界面安装bookdown**
+
+安装 blogdown：\
+    install.packages("bookdown")
+
+download [demo](https://github.com/rstudio/bookdown-demo),and unzip in your location direcory\
+通过点击bookdown-demo.Rproj打开目录bookdown-demo\
+然后按照自己的格式修改.Rmd，保存\
+打开文件index.Rmd，点击右上角Build 按键创建一本book
+
+# **第三步：更详细流程get a book **
+
+1. 从模板开始
+2. 下载模板文档,
+用来创建各种不同格式的 bookdown 模板
+>install.packages("bookdownplus")
+require(bookdownplus)
+bd('ubt')
+
+3. 将模板文档解压缩到任意文件夹。
+在解压缩后得到的文件里找到扩展名为.Rproj的文件。双击，默认会用RSudio打开。
+
+4. 在RStudio右下面板里会看到该文件夹里的文件，其中有一些扩展名为.Rmd的文件。逐个点击打开，把其中的内容修改成你自己的内容。除了index.Rm外，不需要的.Rmd文件可以删掉。
+
+5. 在RStudio右上面板点击Build标签，再点击build book。好了，模板书出现在名为_book的子文件夹里。
+
+以上，为整个操作流程。
+
+参考文献：\
+1.[bookdown: Authoring Books and Technical Documents with R Markdown](https://bookdown.org/yihui/bookdown/)\
+2.[bookdownplus](https://cran.r-project.org/web/packages/bookdownplus/)\
+3.[bookdown-demo](https://github.com/rstudio/bookdown-demo)\
+4.[R bookdown 快速入门和语法速查](http://dapengde.com/archives/19141)\
+5.[我会学习R的bookdown，因为这个博客](http://www.bio-info-trainee.com/2463.html)\
+
+

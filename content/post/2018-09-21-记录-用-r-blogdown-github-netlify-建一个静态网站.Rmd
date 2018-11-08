@@ -111,6 +111,7 @@ Project directory name应该自动就生成了，
 打开 rstudio 右下角的Files标签，点击.gitignore文件，改成下面这样（copy Yihui 的）：\
 目录就不会提交到 github 上
 
+>  
 .Rproj.user\
 .Rhistory\
 .RData\
@@ -144,7 +145,9 @@ RStudio 插件->"Serve Site"（建议先设置 options(servr.daemon = TRUE) 选�
 
 **推送到 Github（推荐方式）如下**
 
-打开Git Bash\
+打开Git Bash
+
+>
     cd <本地项目目录> \
     git init\
     git add . \
